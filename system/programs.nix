@@ -1,12 +1,16 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    # Essential Terminal Utilities
     nano
     curl
     wget
     p7zip
     dust
     fzf
+
+    # Essential Apps
     kitty
+    vscodium # TODO: Replace with more permanent configuration!
   ];
 
   programs = {

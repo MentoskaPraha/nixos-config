@@ -1,7 +1,6 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./git.nix
-    ./desktop.nix
   ];
 
   home.username = "filip";

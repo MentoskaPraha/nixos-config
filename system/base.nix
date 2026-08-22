@@ -1,23 +1,26 @@
 { pkgs, ... }: {
+  # Bootloader config - Move to device specific config?
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # We use the latest and greatest in this house
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Gaming Graphics config
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
+  # Hibernation timer config - Move to device specific config?
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=15m
   '';
 
+  # Nix settings
   nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     trusted-users = ["root" "@wheel"];
     experimental-features = [ "nix-command" "flakes" ];
   };
+  nixpkgs.config.allowUnfree = true;
 }
