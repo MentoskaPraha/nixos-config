@@ -6,10 +6,11 @@
     wget
     p7zip
     dust
+    atuin
     fzf
+    fastfetch
 
     # Essential Apps
-    kitty
     vscodium # TODO: Replace with more permanent configuration!
   ];
 

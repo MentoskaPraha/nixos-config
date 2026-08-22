@@ -8,6 +8,7 @@
     description = "Filip J. Stary";
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # Disable root

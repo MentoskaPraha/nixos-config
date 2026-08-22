@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./git.nix
+    ./shell.nix
   ];
 
   home.username = "filip";
