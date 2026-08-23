@@ -1,7 +1,6 @@
 { pkgs, ... }: {
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
-    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     profiles.default = {
       userSettings = {
@@ -9,7 +8,7 @@
         "editor.tabSize" = 2;
         "editor.insertSpaces" = true;
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd"
+        "nix.serverPath" = "nixd";
       };
       extensions = [
         # Essential extensions
@@ -32,10 +31,10 @@
         pkgs.open-vsx.astro-build.astro-vscode
         pkgs.open-vsx.svelte.svelte-vscode
         pkgs.open-vsx.bradlc.vscode-tailwindcss
-        pkgs.open-vsx.yoabls.pretty-ts-errors
+        pkgs.open-vsx.yoavbls.pretty-ts-errors
         pkgs.open-vsx.ecmel.vscode-html-css
         pkgs.open-vsx.formulahendry.auto-rename-tag
       ];
     };
-  }
+  };
 }

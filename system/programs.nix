@@ -35,7 +35,7 @@
   };
 
   # Enable vscode extensions
-  inputs.nixpkgs.overlays = [
+  nixpkgs.overlays = [
     inputs.nix-vscode-extensions.overlays.default
   ];
 }
