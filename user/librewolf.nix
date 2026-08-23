@@ -1,12 +1,13 @@
-{ ... } {
+{ ... }: {
   programs.librewolf = {
     enable = true;
     settings = {
       "webgl.disabled" = false;
-      "privacy.clearOnShutdown.history" = false;
       "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-      "ui.systemUsesDarkTheme" = 1;
       "layout.css.prefers-color-scheme.content-override" = 0;
+      "privacy.clearOnShutdown.history" = false;
+      "privacy.clearOnShutdown.cookies" = false;
+      "privacy.clearOnShutdown.sessions" = false;
     };
     policies = {
       DisableTelemetry = true;
