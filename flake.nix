@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { nixpkgs, nix-hardware, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, nixos-hardware, home-manager, ... }@inputs: {
     nixosConfigurations = {
       MP-Laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -26,7 +26,6 @@
           home-manager.nixosModules.default {
             home-manager = {
               useGlobalPkgs = true;
-              useUserHomeMods = true;
               extraSpecialArgs = { inherit inputs; };
               users.filip = import ./user/default.nix;
             };

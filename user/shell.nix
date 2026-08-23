@@ -3,7 +3,7 @@
     zsh = {
       enable = true;
 
-      initExtra = ''
+      initContent = ''
         fastfetch
       '';
 
@@ -26,6 +26,7 @@
     atuin = {
       enable = true;
       enableZshIntegration = true;
+      flags = [ "--disable-ctrl-r" ];
     };
   };
 }

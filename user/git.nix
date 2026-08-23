@@ -2,10 +2,11 @@
   programs.git = {
     enable = true;
 
-    userName = "MentoskaPraha";
-    userEmail = "contact+git@mentoskapraha.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "MentoskaPraha";
+        email = "contact+git@mentoskapraha.com";
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
       core.editor = "nano";

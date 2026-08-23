@@ -21,12 +21,14 @@
   services.desktopManager.plasma6.enable = true;
 
   # X11 Stuff
-  services.xserver = {
-    enable = true;
+  services = {
     libinput.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
   };
 }

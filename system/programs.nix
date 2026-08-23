@@ -22,15 +22,9 @@
       lfs.enable = true;
     };
 
-    librewolf = {
+    firefox = {
       enable = true;
-      settings = {
-        "webgl.disabled" = false;
-        "privacy.clearOnShutdown.history" = false;
-        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-        "ui.systemUsesDarkTheme" = 1;
-        "layout.css.prefers-color-scheme.content-override" = 0;
-      };
+      package = pkgs.librewolf;
       policies = {
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
