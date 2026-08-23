@@ -3,14 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions"
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, nixos-hardware, home-manager, nix-vscode-extensions, ... }@inputs: {
     nixosConfigurations = {
       MP-Laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

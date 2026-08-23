@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Essential Terminal Utilities
     nano
@@ -10,10 +10,11 @@
     fzf
     fastfetch
 
-    # Essential Apps
-    vscodium # TODO: Replace with more permanent configuration!
+    # Other stuff
+    nixd # Language server for nix
   ];
 
+  # Other essential programs
   programs = {
     steam.enable = true;
 
@@ -26,5 +27,15 @@
       enable = true;
       package = pkgs.librewolf;
     };
+
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+    };
   };
+
+  # Enable vscode extensions
+  inputs.nixpkgs.overlays = [
+    inputs.nix-vscode-extensions.overlays.default
+  ];
 }

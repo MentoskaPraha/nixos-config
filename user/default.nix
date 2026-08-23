@@ -3,6 +3,7 @@
     ./git.nix
     ./shell.nix
     ./librewolf.nix
+    ./vscodium.nix
   ];
 
   home.username = "filip";
