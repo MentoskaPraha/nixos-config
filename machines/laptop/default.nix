@@ -21,6 +21,7 @@
   };
 
   # Bootloader config
+  boot.loader.limine.secureBoot.enable = true;
   environment.systemPackages = with pkgs; [
     sbctl
   ];
