@@ -13,10 +13,22 @@
     HibernateDelaySec="15m";
   };
 
+  # Bootloader config
+  boot.loader.limine.enable = true;
+  boot.loader.timeout = 1;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   # Nix settings
-  nix.settings = {
-    trusted-users = ["root" "@wheel"];
-    experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      trusted-users = ["root" "@wheel"];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
   nixpkgs.config.allowUnfree = true;
 }

@@ -21,8 +21,9 @@
   };
 
   # Bootloader config
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  environment.systemPackages = with pkgs; [
+    sbctl
+  ];
   boot.initrd.luks.devices."luks-0b1320b7-c7c9-48ff-a660-d24689b99d52".device = "/dev/disk/by-uuid/0b1320b7-c7c9-48ff-a660-d24689b99d52";
 
   system.stateVersion = "26.05";

@@ -4,6 +4,18 @@ This is my configuration flake for NixOS ensuring all my computers have the same
 
 Certain machines don't have Disk Encryption or Secure Boot or have different timezones.
 
+## Updating
+
+```sh
+nix flake update
+```
+
+This command will update the flake (must be in same directory as flake.nix). Afterwards the system can be rebuilt like so:
+
+```sh
+nixos-rebuild switch --sudo --flake ~/path-to-flake#system-hostname
+```
+
 ## Installing on a new Machine
 
 When installing on a new machine, use the graphical installer to setup the basic system. Then clone this repo and rebuild to use it.
