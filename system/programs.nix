@@ -11,7 +11,7 @@
     fastfetch
 
     # Libreoffice
-    libreoffice-fresh
+    libreoffice-stable
     hunspellDicts.en_US-large
     hunspellDicts.en_GB-large
     hunspellDicts.fr-moderne
