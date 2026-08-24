@@ -10,13 +10,35 @@
     fzf
     fastfetch
 
+    # Libreoffice
+    libreoffice-fresh
+    hunspellDicts.en_US-large
+    hunspellDicts.en_GB-large
+    hunspellDicts.fr-moderne
+    hunspellDicts.cs_CZ
+    hyphenDicts.en_US
+    hyphenDicts.en_GB
+    hyphenDicts.fr_FR
+    hyphenDicts.cs_CZ
+
     # Other stuff
     nixd # Language server for nix
+    heroic # Game launcher
   ];
 
   # Other essential programs
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+      extest.enable = true;
+      localNetworkGameTransfers.openFirewall = true;
+      protontricks.enable = true;
+    };
+
+    gamemode = {
+      enable = true;
+      settings.general.inhibit_screensaver = 0;
+    };
 
     git = {
       enable = true;

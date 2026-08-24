@@ -7,6 +7,7 @@
     enable = true;
     enable32Bit = true;
   };
+  hardware.steam-hardware.enable = true;
 
   # Hibernation timer config
   systemd.sleep.settings.Sleep = {

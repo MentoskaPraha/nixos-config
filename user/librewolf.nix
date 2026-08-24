@@ -8,6 +8,7 @@
       "privacy.clearOnShutdown.history" = false;
       "privacy.clearOnShutdown.cookies" = false;
       "privacy.clearOnShutdown.sessions" = false;
+      "widget.gtk.libadwaita-colors.enabled" = false;
     };
     policies = {
       DisableTelemetry = true;
