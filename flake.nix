@@ -33,10 +33,12 @@
               useGlobalPkgs = true;
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              users.filip = import [
-                ./user/default.nix
-                #./machines/laptop/desktop.nix
-              ];
+              users.filip = {
+                imports = [
+                  ./user/default.nix
+                  #./machines/laptop/desktop.nix
+                ];
+              };
             };
           }
         ];
