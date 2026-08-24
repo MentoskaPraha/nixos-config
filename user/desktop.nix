@@ -16,9 +16,9 @@
       plasma-localerc.Translations.LANGUAGE = "en_US";
 
       # Other
-      ksmserverrc.General.loginMode = "emptySession"; # Login to empty session
-      kwinrc.Input.TabletMode = "off"; # Disable tablet mode
-      kwinrc.org.kde.kdecoration2.AlwaysShowExcludeFromCapture = true;
+      kwinrc.Input.TabletMode = "off";
+      kwinrc."org.kde.kdecoration2".AlwaysShowExcludeFromCapture = true;
+      kwinrc.Effect-overview.BorderActivate = 9;
     };
 
     workspace = {
@@ -39,23 +39,26 @@
       theme = "breeze-dark";
       colorScheme = "BreezeDark";
       iconTheme = "BreezeDark";
-      lookAndFeel = "org.kde.breezedark.desktop";
       soundTheme = "ocean";
       widgetStyle = "breeze";
+      windowDecorations = {
+        library = "org.kde.breeze";
+        theme = "Breeze";
+      };
 
       # Wallpaper config
-      wallpaper = "./assets/desktop_wallpaper.png";
+      wallpaper = ./assets/desktop_wallpaper.png;
       wallpaperFillMode = "preserveAspectFit";
 
       # Disable splash screen
-      splashscreen = {
+      splashScreen = {
         engine = "none";
         theme = "None";
       };
     };
 
     # Keyboard setup
-    inputs = {
+    input = {
       keyboard = {
         model = "pc104";
         numlockOnStartup = "on";
@@ -83,7 +86,7 @@
           "close"
         ];
       };
-      nightLight.enabled = false;
+      nightLight.enable = false;
       edgeBarrier = 0;
       cornerBarrier = false;
       effects.cube.enable = true;
@@ -104,7 +107,7 @@
       appearance = {
         alwaysShowClock = true;
         showMediaControls = true;
-        wallpaper = "./assets/lockscreen_wallpaper.png";
+        wallpaper = ./assets/lockscreen_wallpaper.png;
       };
     };
 
@@ -183,11 +186,11 @@
         apply = {
           fullscreen = {
             value = true;
-            apply = "apply-initially";
+            apply = "initially";
           };
           position = {
             value = "0,0";
-            apply = "apply-initially";
+            apply = "initially";
           };
         };
       }
@@ -203,11 +206,11 @@
         apply = {
           fullscreen = {
             value = true;
-            apply = "apply-initially";
+            apply = "initially";
           };
           position = {
             value = "0,0";
-            apply = "apply-initially";
+            apply = "initially";
           };
         };
       }
@@ -275,7 +278,7 @@
                 showWeekNumbers = true;
                 firstDayOfWeek = "monday";
               };
-              timezone.format = "code";
+              timeZone.format = "code";
               time = {
                 format = "24h";
                 showSeconds = "always";
@@ -283,7 +286,7 @@
               date = {
                 enable = true;
                 position = "belowTime";
-                format = "ddd d MMM yyyy";
+                format.custom = "ddd d MMM yyyy";
               };
             };
           }

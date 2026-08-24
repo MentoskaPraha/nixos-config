@@ -1,5 +1,5 @@
 { ... }: {
-  programs.plasma.inputs.touchpads = [
+  programs.plasma.input.touchpads = [
     {
       name = "PIXA3854:00 093A:0274 Touchpad";
       productId = "0274";
@@ -10,14 +10,11 @@
       middleButtonEmulation = false;
       rightClickMethod = "twoFingers";
       pointerSpeed = 0;
-      acelerationProfile = "default";
+      accelerationProfile = "default";
       naturalScroll = true;
       scrollMethod = "twoFingers";
       scrollSpeed = 0.3;
-      tapAndDrag = false;
-      tapDragLock = false;
       tapToClick = false;
-      twoFingerTap = false;
     }
   ];
 }
