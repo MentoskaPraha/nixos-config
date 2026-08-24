@@ -9,6 +9,7 @@
         "editor.insertSpaces" = true;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
+        "workbench.iconTheme" = "vscode-icons";
       };
       extensions = [
         # Essential extensions

@@ -16,6 +16,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
@@ -36,6 +37,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "nix-vscode-extensions",
         "type": "github"
       }
@@ -107,6 +109,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "trunk",
         "repo": "plasma-manager",
         "type": "github"
       }

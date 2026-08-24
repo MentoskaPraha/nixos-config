@@ -44,7 +44,7 @@
       widgetStyle = "breeze";
 
       # Wallpaper config
-      #wallpaper = "./assets/desktop_wallpaper.png";
+      wallpaper = "./assets/desktop_wallpaper.png";
       wallpaperFillMode = "preserveAspectFit";
 
       # Disable splash screen
@@ -104,7 +104,7 @@
       appearance = {
         alwaysShowClock = true;
         showMediaControls = true;
-        #wallpaper = "./assets/lockscreen_wallpaper.png";
+        wallpaper = "./assets/lockscreen_wallpaper.png";
       };
     };
 

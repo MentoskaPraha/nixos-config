@@ -4,7 +4,7 @@
     ./shell.nix
     ./librewolf.nix
     ./vscodium.nix
-    #./desktop.nix
+    ./desktop.nix
   ];
 
   home.username = "filip";

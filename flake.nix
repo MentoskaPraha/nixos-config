@@ -36,7 +36,28 @@
               users.filip = {
                 imports = [
                   ./user/default.nix
-                  #./machines/laptop/desktop.nix
+                  ./machines/laptop/desktop.nix
+                ];
+              };
+            };
+          }
+        ];
+      };
+      MP-PC = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          #./machines/pc/default.nix
+          ./system/default.nix
+          home-manager.nixosModules.default {
+            home-manager = {
+              useGlobalPkgs = true;
+              extraSpecialArgs = { inherit inputs; };
+              sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              users.filip = {
+                imports = [
+                  ./user/default.nix
+                  ./machines/laptop/desktop.nix
                 ];
               };
             };
