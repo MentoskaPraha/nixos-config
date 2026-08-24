@@ -35,6 +35,7 @@ Ensure the following is setup:
   - Display Configuration
   - Internet & Bluetooth
   - Printers
+- Login Everywhere
 
 ## To Do
 
