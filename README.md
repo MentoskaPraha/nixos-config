@@ -32,12 +32,9 @@ Ensure the following is setup:
 - Secure Boot (if applicable)
 - Certain Settings in Plasma
   - Finger Print Login (if applicable)
-  - SDDM Theming
   - Display Configuration
-    - Including Screen Edges (should be disabled)
   - Internet & Bluetooth
   - Printers
-  - Set User Profile Picture
 
 ## To Do
 
@@ -59,3 +56,12 @@ Ensure the following is setup:
   - [ ] Contacts (sync with Nextcloud)
   - [ ] Newsflash
   - [ ] Obsidian
+
+## Credits
+
+Unfortunately I'm not a perfect, so a decent chunk of the things in this configuration weren't written by me. Here's everyone else who contributed somehow:
+
+- [Siddharth More](https://gitlab.com/sidmoreoss) from whom I "borrowed" the [user icon logic](./system/modules/user_icon.nix) (the original code can be found [here](https://gitlab.com/lazylinux/nixos/-/blob/main/modules/users/icon.nix)).
+- Claude - for helping debug and write some of the components.
+
+Thank you to everyone!

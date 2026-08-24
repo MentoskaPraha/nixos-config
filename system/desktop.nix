@@ -3,6 +3,18 @@ let
   lockscreen_wallpaper = pkgs.runCommand "lockscreen_wallpaper" {} ''
     cp ${../assets/lockscreen_wallpaper.png} $out
   '';
+  sddm_kdeglobals = pkgs.writeText "sddm_kdeglobals" ''
+    [General]
+    ColorScheme=BreezeDark
+    Name=Breeze Dark
+
+    [KDE]
+    widgetStyle=Breeze
+  '';
+  sddm_plasmarc = pkgs.writeText "sddm_plasmarc" ''
+    [Theme]
+    name=breeze-dark
+  '';
 in {
   # Audio
   services.pulseaudio.enable = false;
@@ -28,6 +40,12 @@ in {
       background = ${lockscreen_wallpaper}
     '')
   ];
+  system.activationScripts.sddmDarkTheme = ''
+    mkdir -p /var/lib/sddm/.config
+    cp ${sddm_kdeglobals} /var/lib/sddm/.config/kdeglobals
+    cp ${sddm_plasmarc} /var/lib/sddm/.config/plasmarc
+    chown -R sddm:sddm /var/lib/sddm/.config
+  '';
 
   # Plasma DE
   services.desktopManager.plasma6 = {

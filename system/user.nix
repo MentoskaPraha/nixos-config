@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./modules/user_icon.nix
+  ];
+
   # Ensure we using zsh
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
@@ -9,6 +13,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "gamemode" ];
     shell = pkgs.zsh;
+    icon = ../assets/user_icon.png;
   };
 
   # Disable root
@@ -21,7 +26,7 @@
     wheelNeedsPassword = true;
   };
 
-  # Locale Settings - INCOMPLETE! MUST CONFIGURE!
+  # Locale Settings
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
