@@ -11,6 +11,7 @@
         "nix.serverPath" = "nixd";
         "workbench.iconTheme" = "vscode-icons";
         "extensions.autoUpdate" = "off";
+        "explorer.confirmDragAndDrop" = false;
       };
       extensions = [
         # Essential extensions

@@ -26,6 +26,7 @@
     # Other stuff
     nixd # Language server for nix
     heroic # Game launcher
+    piper # Gaming mouse config UI
     vlc
   ];
 
@@ -63,6 +64,9 @@
       openFirewall = true;
     };
   };
+
+  # Enable config deamon for gaming mouse
+  services.ratbagd.enable = true;
 
   # Enable vscode extensions
   nixpkgs.overlays = [

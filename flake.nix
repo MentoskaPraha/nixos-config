@@ -26,8 +26,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
-          ./machines/laptop/default.nix
-          ./system/default.nix
+          ./machines/laptop
+          ./system
           home-manager.nixosModules.default {
             home-manager = {
               useGlobalPkgs = true;
@@ -35,8 +35,8 @@
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               users.filip = {
                 imports = [
-                  ./user/default.nix
-                  ./machines/laptop/desktop.nix
+                  ./user
+                  ./devices/touchpad.nix
                 ];
               };
             };
@@ -47,8 +47,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          #./machines/pc/default.nix
-          ./system/default.nix
+          ./machines/pc
+          ./system
           home-manager.nixosModules.default {
             home-manager = {
               useGlobalPkgs = true;
@@ -56,8 +56,8 @@
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               users.filip = {
                 imports = [
-                  ./user/default.nix
-                  ./machines/laptop/desktop.nix
+                  ./user
+                  ./devices/mouse.nix
                 ];
               };
             };

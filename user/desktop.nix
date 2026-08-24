@@ -38,7 +38,7 @@
       # Theming Config
       theme = "breeze-dark";
       colorScheme = "BreezeDark";
-      iconTheme = "BreezeDark";
+      iconTheme = "breeze-dark";
       soundTheme = "ocean";
       widgetStyle = "breeze";
       windowDecorations = {
