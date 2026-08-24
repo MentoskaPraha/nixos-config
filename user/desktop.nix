@@ -15,16 +15,43 @@
       };
       plasma-localerc.Translations.LANGUAGE = "en_US";
 
-      # Disable splashscreen
-      ksplashrc.KSplash = {
-        Engine = "none"; 
-        Theme = "None";
-      };
-
       # Other
       ksmserverrc.General.loginMode = "emptySession"; # Login to empty session
       kwinrc.Input.TabletMode = "off"; # Disable tablet mode
-      kwinrc.Plugins.cubeEnabled = true; # C U B E
+      kwinrc.org.kde.kdecoration2.AlwaysShowExcludeFromCapture = true;
+    };
+
+    workspace = {
+      enableMiddleClickPaste = true;
+      clickItemTo = "select";
+      tooltipDelay = 5;
+
+      # Cursor Config
+      cursor = {
+        theme = "breeze_cursors";
+        size = 24;
+        taskManagerFeedback = true;
+        cursorFeedback = "Bouncing";
+        animationTime = 5;
+      };
+
+      # Theming Config
+      theme = "breeze-dark";
+      colorScheme = "BreezeDark";
+      iconTheme = "BreezeDark";
+      lookAndFeel = "org.kde.breezedark.desktop";
+      soundTheme = "ocean";
+      widgetStyle = "breeze";
+
+      # Wallpaper config
+      #wallpaper = "./assets/desktop_wallpaper.png";
+      wallpaperFillMode = "preserveAspectFit";
+
+      # Disable splash screen
+      splashscreen = {
+        engine = "none";
+        theme = "None";
+      };
     };
 
     # Keyboard setup
@@ -38,49 +65,35 @@
       };
     };
 
-    # Custom Window Rules
-    window-rules = [
-      {
-        description = "Fullscreen Minecraft";
-        match = {
-          window-class = {
-            value = "Minecraft";
-            type = "substring";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          fullscreen = {
-            value = true;
-            apply = "apply-initially";
-          };
-          position = {
-            value = "0,0";
-            apply = "apply-initially";
-          };
-        };
-      }
-      {
-        description = "Fullscreen Roblox";
-        match = {
-          window-class = {
-            value = "Sober";
-            type = "substring";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          fullscreen = {
-            value = true;
-            apply = "apply-initially";
-          };
-          position = {
-            value = "0,0";
-            apply = "apply-initially";
-          };
-        };
-      }
-    ];
+    krunner = {
+      activateWhenTypingOnDesktop = true;
+      historyBehavior = "enableSuggestions";
+      position = "top";
+    };
+
+    kwin = {
+      titlebarButtons = {
+        left = [
+          "application-menu"
+          "hide-from-screencast"
+        ];
+        right = [
+          "minimize"
+          "maximize"
+          "close"
+        ];
+      };
+      nightLight.enabled = false;
+      edgeBarrier = 0;
+      cornerBarrier = false;
+      effects.cube.enable = true;
+    };
+    windows.allowWindowsToRememberPositions = true;
+
+    session = {
+      general.askForConfirmationOnLogout = true;
+      sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
+    };
 
     # Lock Screen setup
     kscreenlocker = {
@@ -155,6 +168,128 @@
         };
       };
     };
+
+    # Custom Window Rules
+    window-rules = [
+      {
+        description = "Fullscreen Minecraft";
+        match = {
+          window-class = {
+            value = "Minecraft";
+            type = "substring";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          fullscreen = {
+            value = true;
+            apply = "apply-initially";
+          };
+          position = {
+            value = "0,0";
+            apply = "apply-initially";
+          };
+        };
+      }
+      {
+        description = "Fullscreen Roblox";
+        match = {
+          window-class = {
+            value = "Sober";
+            type = "substring";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          fullscreen = {
+            value = true;
+            apply = "apply-initially";
+          };
+          position = {
+            value = "0,0";
+            apply = "apply-initially";
+          };
+        };
+      }
+    ];
+
+    # Configure Bottom Pannel
+    panels = [
+      {
+        location = "bottom";
+        alignment = "center";
+        floating = false;
+        hiding = "normalpanel";
+        opacity = "opaque";
+        lengthMode = "fill";
+        height = 46;
+        widgets = [
+          {
+            kickoff = {
+              icon = "plasma-symbolic";
+              compactDisplayStyle = false;
+              sortAlphabetically = false;
+              sidebarPosition = "left";
+              favoritesDisplayMode = "grid";
+              applicationsDisplayMode = "list";
+              showButtonsFor = "power";
+              showActionButtonCaptions = true;
+            };
+          }
+          {
+            name = "org.kde.plasma.kickoff";
+            config = {
+              General = {
+                icon = "plasma-symbolic";
+                favoritesPortedToKAstats = true;
+                highlightNewlyInstalledApps = false;
+                switchCategoryOnHover = true;
+                systemFavorites= "suspend\\,hibernate\\,reboot\\,shutdown";
+              };
+            };
+          }
+          {
+            name = "org.kde.plasma.pager";
+            config = {
+              General = {
+                displayedText = "Number";
+              };
+            };
+          }
+          {
+            iconTasks = {
+              launchers = [
+                "applications:org.kde.dolphin.desktop"
+                "applications:org.kde.konsole.desktop"
+                "applications:librewolf.desktop"
+                "applications:codium.desktop"
+                "applications:systemsettings.desktop"
+              ];
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          {
+            digitalClock = {
+              calendar = {
+                showWeekNumbers = true;
+                firstDayOfWeek = "monday";
+              };
+              timezone.format = "code";
+              time = {
+                format = "24h";
+                showSeconds = "always";
+              };
+              date = {
+                enable = true;
+                position = "belowTime";
+                format = "ddd d MMM yyyy";
+              };
+            };
+          }
+        ];
+      }
+    ];
 
     # All of my shortcuts
     shortcuts = {

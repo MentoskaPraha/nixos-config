@@ -42,5 +42,20 @@ Ensure the following is setup:
 ## To Do
 
 - [ ] Setup Flatpak Apps
+  - [ ] Discord
+  - [ ] Sober
+  - [ ] EDMC
+  - [ ] Proton VPN
+  - [ ] Proton Mail
 - [ ] Setup libratbag & piper
+- [ ] Setup Wireguard VPN
 - [ ] Nix Shell for dev environments
+- [ ] Desktop Mouse config in KDE Settings 
+- [ ] Missing Apps
+  - [ ] Cartriges for games
+  - [ ] btop
+  - [ ] GPU Screen Recorder
+  - [ ] Calendar (sync with Nextcloud)
+  - [ ] Contacts (sync with Nextcloud)
+  - [ ] Newsflash
+  - [ ] Obsidian
