@@ -17,7 +17,7 @@
     autoNumlock = true;
   };
 
-  # Cosmic DE
+  # Plasma DE
   services.desktopManager.plasma6 = {
     enable = true;
     enableQt5Integration = true;

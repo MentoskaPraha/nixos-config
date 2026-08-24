@@ -27,17 +27,16 @@
         modules = [
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
           ./machines/laptop/default.nix
-          ./system/base.nix
-          ./system/network.nix
-          ./system/user.nix
-          ./system/programs.nix
-          ./system/desktop.nix
+          ./system/default.nix
           home-manager.nixosModules.default {
             home-manager = {
               useGlobalPkgs = true;
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              users.filip = import ./user/default.nix;
+              users.filip = import [
+                ./user/default.nix
+                #./machines/laptop/desktop.nix
+              ];
             };
           }
         ];

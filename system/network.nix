@@ -1,7 +1,4 @@
 { ... }: {
-  # Printing baby!
-  services.printing.enable = true;
-
   # Networking Config
   networking = {
     networkmanager.enable = true;
@@ -12,8 +9,18 @@
     };
   };
 
+  # Printing baby!
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  # the blutooth device is disconnected
   hardware.bluetooth = {
     enable = true;
+    powerOnBoot = false;
     settings = {
       General = {
         Experimental = true;

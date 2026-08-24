@@ -9,13 +9,14 @@
     atuin
     fzf
     ffmpeg-full
+    imagemagickBig
     fastfetch
 
     # Libreoffice
     libreoffice-stable
     hunspellDicts.en_US-large
     hunspellDicts.en_GB-large
-    hunspellDicts.fr-moderne
+    hunspellDicts.fr-any
     hunspellDicts.cs_CZ
     hyphenDicts.en_US
     hyphenDicts.en_GB
@@ -55,6 +56,11 @@
     vscode = {
       enable = true;
       package = pkgs.vscodium;
+    };
+
+    localsend = {
+      enable = true;
+      openFirewall = true;
     };
   };
 

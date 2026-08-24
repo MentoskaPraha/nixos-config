@@ -11,7 +11,7 @@
 
   # Hibernation timer config
   systemd.sleep.settings.Sleep = {
-    HibernateDelaySec="15m";
+    HibernateDelaySec="10m";
   };
 
   # Bootloader config
