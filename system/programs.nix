@@ -8,6 +8,7 @@
     dust
     atuin
     fzf
+    ffmpeg-full
     fastfetch
 
     # Libreoffice
@@ -24,6 +25,7 @@
     # Other stuff
     nixd # Language server for nix
     heroic # Game launcher
+    vlc
   ];
 
   # Other essential programs

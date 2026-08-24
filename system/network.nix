@@ -11,4 +11,17 @@
       allowPing = true;
     };
   };
+
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = false;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
 }

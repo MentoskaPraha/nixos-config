@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   # Audio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -11,14 +11,25 @@
   };
 
   # Login
-  services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    autoNumlock = true;
+  };
 
   # Cosmic DE
-  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.plasma6 = {
+    enable = true;
+    enableQt5Integration = true;
+  };
 
   # Exclude unneeded packages
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-edit
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.kate
+    kdePackages.discover
+    kdePackages.khelpcenter
+    kdePackages.elisa
+    xterm
   ];
 
   # X11 Stuff
@@ -26,6 +37,7 @@
     libinput.enable = true;
     xserver = {
       enable = true;
+      desktopManager.xterm.enable = lib.mkForce false;
       xkb = {
         layout = "us";
         variant = "";
