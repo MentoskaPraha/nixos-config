@@ -47,8 +47,8 @@
       };
 
       # Wallpaper config
-      wallpaper = ./assets/desktop_wallpaper.png;
-      wallpaperFillMode = "preserveAspectFit";
+      wallpaper = ../assets/desktop_wallpaper.png;
+      wallpaperFillMode = "preserveAspectCrop";
 
       # Disable splash screen
       splashScreen = {
@@ -107,7 +107,7 @@
       appearance = {
         alwaysShowClock = true;
         showMediaControls = true;
-        wallpaper = ./assets/lockscreen_wallpaper.png;
+        wallpaper = ../assets/lockscreen_wallpaper.png;
       };
     };
 
@@ -227,18 +227,6 @@
         lengthMode = "fill";
         height = 46;
         widgets = [
-          {
-            kickoff = {
-              icon = "plasma-symbolic";
-              compactDisplayStyle = false;
-              sortAlphabetically = false;
-              sidebarPosition = "left";
-              favoritesDisplayMode = "grid";
-              applicationsDisplayMode = "list";
-              showButtonsFor = "power";
-              showActionButtonCaptions = true;
-            };
-          }
           {
             name = "org.kde.plasma.kickoff";
             config = {

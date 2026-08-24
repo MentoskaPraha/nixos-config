@@ -10,6 +10,7 @@
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
         "workbench.iconTheme" = "vscode-icons";
+        "extensions.autoUpdate" = "off";
       };
       extensions = [
         # Essential extensions

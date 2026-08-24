@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+let
+  lockscreen_wallpaper = pkgs.runCommand "lockscreen_wallpaper" {} ''
+    cp ${../assets/lockscreen_wallpaper.png} $out
+  '';
+in {
   # Audio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -15,7 +20,14 @@
     enable = true;
     wayland.enable = true;
     autoNumlock = true;
+    theme = "breeze";
   };
+  environment.systemPackages = [
+    (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+      [General]
+      background = ${lockscreen_wallpaper}
+    '')
+  ];
 
   # Plasma DE
   services.desktopManager.plasma6 = {
