@@ -92,7 +92,6 @@
   services.flatpak = {
     enable = true;
     uninstallUnmanaged = true;
-    pruneUnmanagedOverrides = true;
     remotes = [
       { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
     ];
