@@ -28,5 +28,45 @@
       enableZshIntegration = true;
       flags = [ "--disable-ctrl-r" ];
     };
+
+    fastfetch = {
+      enable = true;
+      settings = {
+        modules = [
+          "title"
+          "separator"
+          "os"
+          "host"
+          "kernel"
+          "uptime"
+          "packages"
+          "shell"
+          "display"
+          "de"
+          "wm"
+          "wmtheme"
+          "theme"
+          "icons"
+          "font"
+          "cursor"
+          {
+            type = "terminal";
+            format = "{process-name} {version}";
+          }
+          "terminalfont"
+          "cpu"
+          "gpu"
+          "memory"
+          "swap"
+          "disk"
+          "battery"
+          "poweradapter"
+          "localip"
+          "locale"
+          "break"
+          "colors"
+        ];
+      };
+    };
   };
 }
