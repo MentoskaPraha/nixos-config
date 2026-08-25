@@ -24,7 +24,7 @@ jobs:
           git config set user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add flake.lock
-            git commit -m "chore: update flake.lock"
+            git commit -m "chore: Automatic System Update"
             git push
           else
             echo "No changes to flake.lock, skipping commit."

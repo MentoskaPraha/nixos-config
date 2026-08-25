@@ -253,7 +253,11 @@
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:librewolf.desktop"
+                "applications:com.discordapp.Discord.desktop"
+                "applications:io.gitlab.news_flash.NewsFlash.desktop"
+                "applications:page.kramo.Cartridges.desktop"
                 "applications:codium.desktop"
+                "applications:gpu-screen-recorder.desktop"
                 "applications:systemsettings.desktop"
               ];
             };
