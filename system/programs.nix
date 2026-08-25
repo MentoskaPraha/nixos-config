@@ -96,9 +96,9 @@
       { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
     ];
     packages = [
-      "com.discordapp.Discord"
-      "org.vinegarhq.Sober"
-      "io.edcd.EDMarketConnector"
+      { appId = "com.discordapp.Discord"; origin = "flathub"; }
+      { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
+      { appId = "io.edcd.EDMarketConnector"; origin = "flathub"; }
     ];
     overrides = {
       # Give EDMC access to read journal files

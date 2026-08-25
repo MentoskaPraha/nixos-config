@@ -1,0 +1,31 @@
+name: Automatic System Updates
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  system-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update System
+        run: nix flake update
+      - name: Push Changes to Github (if any)
+        run: |
+          git config set user.name "github-actions[bot]"
+          git config set user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add flake.lock
+            git commit -m "chore: update flake.lock"
+            git push
+          else
+            echo "No changes to flake.lock, skipping commit."
+          fi

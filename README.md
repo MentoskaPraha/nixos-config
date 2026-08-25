@@ -6,13 +6,13 @@ Certain machines don't have Disk Encryption or Secure Boot or have different tim
 
 ## Updating
 
-This command will update the flake (must be in same directory as flake.nix):
+The flake is updated automatically every day at 05:00 UTC. This command will update the flake manually if needed (must be in same directory as flake.nix):
 
 ```sh
 nix flake update
 ```
 
-Afterwards the system can be rebuilt like so:
+All that needs to be done is for those changes to be synced via git and the system to be rebuilt like so:
 
 ```sh
 nixos-rebuild switch --sudo --flake ~/path_to_flake#system_hostname
