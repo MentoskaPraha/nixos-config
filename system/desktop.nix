@@ -52,6 +52,14 @@ in {
     enable = true;
     enableQt5Integration = true;
   };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      kdePackages.xdg-desktop-portal-kde
+    ];
+    xdgOpenUsePortal = true;
+  };
 
   # Exclude unneeded packages
   environment.plasma6.excludePackages = with pkgs; [

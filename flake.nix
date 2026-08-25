@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +20,15 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, plasma-manager, nix-vscode-extensions, ... }@inputs: {
+  outputs = { 
+    nixpkgs, 
+    nixos-hardware, 
+    nix-flatpak, 
+    home-manager, 
+    plasma-manager, 
+    nix-vscode-extensions, 
+    ... 
+  }@inputs: {
     nixosConfigurations = {
       MP-Laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,6 +36,7 @@
         modules = [
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
           ./machines/laptop
+          nix-flatpak.nixosModules.nix-flatpak
           ./system
           home-manager.nixosModules.default {
             home-manager = {

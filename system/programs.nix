@@ -10,6 +10,7 @@
     fzf
     ffmpeg-full
     imagemagickBig
+    btop
     fastfetch
 
     # Libreoffice
@@ -23,11 +24,21 @@
     hyphenDicts.fr_FR
     hyphenDicts.cs_CZ
 
+    # VPN Stuff
+    proton-vpn
+    wireguard-tools
+
+    # Gaming Stuff
+    cartridges # Game launcher
+    heroic # Game launcher for Epic Games/GOG
+    atlauncher # Minecraft
+
     # Other stuff
     nixd # Language server for nix
-    heroic # Game launcher
     piper # Gaming mouse config UI
-    vlc
+    newsflash # RSS Reader
+    obsidian # Markdown Based Notes
+    vlc # Video Player
   ];
 
   # Other essential programs
@@ -63,10 +74,40 @@
       enable = true;
       openFirewall = true;
     };
+
+    # Remember your hotkeys:
+    # Alt+z = show overlay; Alt+1 = Save Replay;
+    # Alt+2 = Start/Stop Replay; Alt+3 = Start/Stop Recording;
+    # Alt+4 = Pause/Resume Recording
+    gpu-screen-recorder = {
+      enable = true;
+      ui.enable = true;
+    };
   };
 
   # Enable config deamon for gaming mouse
   services.ratbagd.enable = true;
+
+  # Enable flatpak
+  services.flatpak = {
+    enable = true;
+    uninstallUnmanagedPackages = true;
+    uninstallUnusedRemotes = true;
+    remotes = [
+      { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
+    ];
+    packages = [
+      "com.discordapp.Discord"
+      "org.vinegarhq.Sober"
+      "io.edcd.EDMarketConnector"
+    ];
+    overrides = {
+      # Give EDMC access to read journal files
+      "io.edcd.EDMarketConnector" = {
+        Context.filesystems = [ "/home/filip/Games/Heroic/Prefixes/default/Elite Dangerous/drive_c/users/steamuser/Saved Games/Frontier Developments/Elite Dangerous" ];
+      };
+    };
+  };
 
   # Enable vscode extensions
   nixpkgs.overlays = [
