@@ -18,6 +18,12 @@ Afterwards the system can be rebuilt like so:
 nixos-rebuild switch --sudo --flake ~/path_to_flake#system_hostname
 ```
 
+Flatpak applications need to be updated separately and manually like so:
+
+```sh
+flatpak update -y
+```
+
 ## Installing on a new Machine
 
 When installing on a new machine, use the graphical installer to setup the basic system. Then clone this repo and rebuild to use it.
