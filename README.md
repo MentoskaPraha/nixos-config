@@ -24,6 +24,18 @@ Flatpak applications need to be updated separately and manually like so:
 flatpak update -y
 ```
 
+Updating the firmware on Framework devices is done with the following 3 commands:
+
+>[!note]
+>You must be plugged into AC power and LVFS may not update if the battery is at 100%.
+>If you experience issues while the battery is at 100%, discharge to 95%, plug AC back in, then re-run `fwupdmgr update`.
+
+```sh
+fwupdmgr refresh --force
+fwupdmgr get-updates
+fwupdmgr update
+```
+
 ## Installing on a new Machine
 
 When installing on a new machine, use the graphical installer to setup the basic system. Then clone this repo and rebuild to use it.
