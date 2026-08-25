@@ -25,7 +25,7 @@
 
   # Fingerprint Reader config
   services.fprintd.enable = true;
-  security.pam.services.sddm.fprintAuth = false;
+  security.pam.services.login.fprintAuth = false;
 
   # Bootloader config
   boot.loader.limine.secureBoot.enable = true;
