@@ -103,7 +103,7 @@
     overrides = {
       # Give EDMC access to read journal files
       "io.edcd.EDMarketConnector" = {
-        Context.filesystems = [ "/home/filip/Games/Heroic/Prefixes/Elite Dangerous/drive_c/users/steamuser/Saved Games/Frontier Developments/Elite Dangerous" ];
+        Context.filesystems = [ "/home/filip/Games/Heroic/Prefixes/Elite Dangerous/drive_c/users/steamuser/Saved Games/Frontier Developments/Elite Dangerous:rw" ];
       };
     };
   };
