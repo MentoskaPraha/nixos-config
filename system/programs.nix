@@ -31,7 +31,7 @@
     # Gaming Stuff
     cartridges # Game launcher
     heroic # Game launcher for Epic Games/GOG
-    atlauncher # Minecraft
+    #atlauncher-bin # Minecraft (waiting on upstream for atlauncher-bin packages as source build gets rejected by atlauncher API)
 
     # Other stuff
     nixd # Language server for nix
@@ -108,8 +108,18 @@
     };
   };
 
-  # Enable vscode extensions
   nixpkgs.overlays = [
+    # Enable vscode extensions
     inputs.nix-vscode-extensions.overlays.default
+
+    # Fix cartridges crashing
+    (final: prev: {
+      cartridges = prev.cartridges.overrideAttrs (old: {
+        postPatch = (old.postPatch or "") + ''
+            substituteInPlace cartridges/window.py \
+              --replace-fail "label=games_no," "label=str(games_no),"
+          '';
+      });
+    })
   ];
 }
