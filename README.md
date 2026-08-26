@@ -79,5 +79,6 @@ Unfortunately I'm not a perfect, so a decent chunk of the things in this configu
 
 - [Siddharth More](https://gitlab.com/sidmoreoss) from whom I "borrowed" the [user icon logic](./system/modules/user_icon.nix) (the original code can be found [here](https://gitlab.com/lazylinux/nixos/-/blob/main/modules/users/icon.nix)).
 - Claude - for helping debug and write some of the components.
+- All the amazing game developers who made the games for which I have [banners](./assets/game_banners) (They're not the only games I play, just the only one that didn't automatically pull assets into [Cartriges](https://apps.gnome.org/Cartridges/) for some reason)
 
 Thank you to everyone!
