@@ -7,11 +7,11 @@
       plasma-localerc.Formats = {
         LANG = "en_US";
         LC_ADDRESS = "en_US";
-        LC_MEASUREMENT = "C";
+        LC_MEASUREMENT = "en_GB";
         LC_NAME = "en_US";
-        LC_PAPER = "C";
+        LC_PAPER = "en_GB";
         LC_TELEPHONE = "en_US";
-        LC_TIME = "C";
+        LC_TIME = "en_GB";
       };
       plasma-localerc.Translations.LANGUAGE = "en_US";
 
