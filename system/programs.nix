@@ -84,6 +84,9 @@
       enable = true;
       ui.enable = true;
     };
+
+    # Allow dynamic libraries to be configured and worked when binaries aren't installed the nix way
+    nix-ld.enable = true;
   };
 
   # Enable config deamon for gaming mouse
