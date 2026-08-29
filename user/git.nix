@@ -10,6 +10,10 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       core.editor = "nano";
+      credential = {
+        helper = "manager";
+        credentialStore = "secretservice";
+      };
     };
   };
 }

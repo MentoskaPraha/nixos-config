@@ -38,6 +38,7 @@
     piper # Gaming mouse config UI
     newsflash # RSS Reader
     obsidian # Markdown Based Notes
+    git-credential-manager # Allow for logining to Git Remotes with oAuth
     vlc # Video Player
   ];
 
