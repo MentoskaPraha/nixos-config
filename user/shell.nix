@@ -29,6 +29,12 @@
       flags = [ "--disable-ctrl-r" ];
     };
 
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
+    };
+
     fastfetch = {
       enable = true;
       settings = {
