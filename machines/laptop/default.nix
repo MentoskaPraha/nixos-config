@@ -26,7 +26,7 @@
           urls = [
             "https://github.com/gnull/intel-ocl/releases/download/5.0-63503/SRB5.0_linux64.zip"
           ];
-          sha256 = "sha512-dq9OMJLzqerB6wxFYsaDCm75hl46fniXJqbkIhxR23s7bRgPxuFNMKDWAd52s4zihYuxT7DE97GTYduJmWiUmw==";
+          sha256 = "sha256-4qaX7wTqxKSrRWeQv1Zrs6eTT0fKJ6g9QBFocugwd2E=";
           stripRoot = false;
         };
       });
