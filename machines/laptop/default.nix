@@ -17,6 +17,22 @@
     extraPackages32 = with pkgs.pkgsi686Linux; [ intel-media-driver intel-vaapi-driver ];
   };
 
+  # Fix intel-ocl failing to download from web-archive
+  nixpkgs.overlays = [(
+    final: prev: {
+      intel-ocl = prev.intel-ocl.overrideAttrs (oldAttrs: {
+        version = "5.0-63503";
+        src = prev.fetchzip {
+          urls = [
+            "https://github.com/gnull/intel-ocl/releases/download/5.0-63503/SRB5.0_linux64.zip"
+          ];
+          sha256 = "sha512-dq9OMJLzqerB6wxFYsaDCm75hl46fniXJqbkIhxR23s7bRgPxuFNMKDWAd52s4zihYuxT7DE97GTYduJmWiUmw==";
+          stripRoot = false;
+        };
+      });
+    }
+  )];
+
   # Handle Lid Switch events
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend-then-hibernate";
