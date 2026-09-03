@@ -11,7 +11,10 @@
         "nix.serverPath" = "nixd";
         "workbench.iconTheme" = "vscode-icons";
         "extensions.autoUpdate" = "off";
+        "extensions.autoCheckUpdates" = false;
+        "update.mode" = "none";
         "explorer.confirmDragAndDrop" = false;
+        "dotnetAcquisitionExtension.enableTelemetry" = false;
       };
       extensions = with pkgs; [
         # Essential extensions
@@ -41,7 +44,7 @@
         # Game dev
         vscode-marketplace.ms-dotnettools.vscode-dotnet-runtime
         vscode-marketplace.ms-dotnettools.csharp
-        vscode-marketplace.ms-dotnettools.csdevkit
+        #vscode-marketplace.ms-dotnettools.csdevkit
         vscode-marketplace.geequlim.godot-tools
         vscode-marketplace.neikeq.godot-csharp-vscode
       ];
