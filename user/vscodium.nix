@@ -13,30 +13,36 @@
         "extensions.autoUpdate" = "off";
         "explorer.confirmDragAndDrop" = false;
       };
-      extensions = [
+      extensions = with pkgs; [
         # Essential extensions
-        pkgs.open-vsx.aaron-bond.better-comments
-        pkgs.open-vsx.adpyke.codesnap
-        pkgs.open-vsx.mikestead.dotenv
-        pkgs.open-vsx.tamasfe.even-better-toml
-        pkgs.open-vsx.mhutchie.git-graph
-        pkgs.open-vsx.oderwat.indent-rainbow
-        pkgs.open-vsx.ibm.output-colorizer
-        pkgs.open-vsx.qwtel.sqlite-viewer
-        pkgs.open-vsx.vscode-icons-team.vscode-icons
-        pkgs.open-vsx.jnoortheen.nix-ide
+        open-vsx.aaron-bond.better-comments
+        open-vsx.adpyke.codesnap
+        open-vsx.mikestead.dotenv
+        open-vsx.tamasfe.even-better-toml
+        open-vsx.mhutchie.git-graph
+        open-vsx.oderwat.indent-rainbow
+        open-vsx.ibm.output-colorizer
+        open-vsx.qwtel.sqlite-viewer
+        open-vsx.vscode-icons-team.vscode-icons
+        open-vsx.jnoortheen.nix-ide
 
         # Flutter dev
-        pkgs.open-vsx.dart-code.dart-code
-        pkgs.open-vsx.dart-code.flutter
+        open-vsx.dart-code.dart-code
+        open-vsx.dart-code.flutter
 
-        # Webdev extensions
-        pkgs.open-vsx.astro-build.astro-vscode
-        pkgs.open-vsx.svelte.svelte-vscode
-        pkgs.open-vsx.bradlc.vscode-tailwindcss
-        pkgs.open-vsx.yoavbls.pretty-ts-errors
-        pkgs.open-vsx.ecmel.vscode-html-css
-        pkgs.open-vsx.formulahendry.auto-rename-tag
+        # Web dev
+        open-vsx.astro-build.astro-vscode
+        open-vsx.svelte.svelte-vscode
+        open-vsx.bradlc.vscode-tailwindcss
+        open-vsx.yoavbls.pretty-ts-errors
+        open-vsx.ecmel.vscode-html-css
+        open-vsx.formulahendry.auto-rename-tag
+
+        # Game dev
+        vscode-marketplace.ms-dotnettools.csharp
+        vscode-marketplace.ms-dotnettools.csdevkit
+        vscode-marketplace.geequlim.godot-tools
+        vscode-marketplace.neikeq.godot-csharp-vscode
       ];
     };
   };
