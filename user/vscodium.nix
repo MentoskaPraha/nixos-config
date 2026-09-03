@@ -39,6 +39,7 @@
         open-vsx.formulahendry.auto-rename-tag
 
         # Game dev
+        vscode-marketplace.ms-dotnettools.vscode-dotnet-runtime
         vscode-marketplace.ms-dotnettools.csharp
         vscode-marketplace.ms-dotnettools.csdevkit
         vscode-marketplace.geequlim.godot-tools
