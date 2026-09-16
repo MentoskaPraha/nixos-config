@@ -57,7 +57,7 @@
       };
     };
 
-    # Keyboard setup
+    # Input Setup
     input = {
       keyboard = {
         model = "pc104";
@@ -66,6 +66,38 @@
         repeatRate = 25.0;
         switchingPolicy = "global";
       };
+      touchpads = [
+        {
+          name = "PIXA3854:00 093A:0274 Touchpad";
+          productId = "0274";
+          vendorId = "093a";
+          enable = true;
+          disableWhileTyping = false;
+          leftHanded = false;
+          middleButtonEmulation = false;
+          rightClickMethod = "twoFingers";
+          pointerSpeed = 0;
+          accelerationProfile = "default";
+          naturalScroll = true;
+          scrollMethod = "twoFingers";
+          scrollSpeed = 0.3;
+          tapToClick = false;
+        }
+      ];
+      mice = [
+        {
+          name = "Logitech Gaming Mouse G600";
+          productId = "c24a";
+          vendorId = "046d";
+          enable = true;
+          acceleration = 0;
+          accelerationProfile = "none";
+          leftHanded = false;
+          middleButtonEmulation = false;
+          naturalScroll = false;
+          scrollSpeed = 1;
+        }
+      ];
     };
 
     krunner = {

@@ -5,7 +5,7 @@
 
   networking.hostName = "MP-Laptop";
 
-  time.timeZone = "America/Chicago";
+  services.automatic-timezoned.enable = true;
 
   # Enable firmware updates
   services.fwupd.enable = true;

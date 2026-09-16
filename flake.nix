@@ -43,12 +43,7 @@
               useGlobalPkgs = true;
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              users.filip = {
-                imports = [
-                  ./user
-                  ./devices/touchpad.nix
-                ];
-              };
+              users.filip = ./user;
             };
           }
         ];
@@ -65,12 +60,7 @@
               useGlobalPkgs = true;
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              users.filip = {
-                imports = [
-                  ./user
-                  ./devices/mouse.nix
-                ];
-              };
+              users.filip = ./user;
             };
           }
         ];
