@@ -13,6 +13,7 @@
     sbctl
   ];
   boot.initrd.luks.devices."luks-ebcbe638-86cd-4b00-a52d-7db57af258dd".device = "/dev/disk/by-uuid/ebcbe638-86cd-4b00-a52d-7db57af258dd";
+  boot.resumeDevice = "/dev/mapper/luks-ebcbe638-86cd-4b00-a52d-7db57af258dd";
 
   # Ensure SDDM has the same display configuration as Plasma
   system.activationScripts.sddmKwinOutputConfig = ''
