@@ -55,24 +55,6 @@ Ensure the following is setup:
   - Printers
 - Login Everywhere
 
-## To Do
-
-- [X] Setup Flatpak Apps
-  - [X] Discord
-  - [X] Sober
-  - [X] EDMC
-  - [X] Proton VPN
-- [X] Setup libratbag & piper
-- [X] Setup Wireguard VPN
-- [ ] Nix Shell for dev environments
-- [X] Desktop Mouse config in KDE Settings 
-- [X] Missing Apps
-  - [X] Cartriges for games
-  - [X] btop
-  - [X] GPU Screen Recorder
-  - [X] Newsflash
-  - [X] Obsidian
-
 ## Credits
 
 Unfortunately I'm not a perfect, so a decent chunk of the things in this configuration weren't written by me. Here's everyone else who contributed somehow:
