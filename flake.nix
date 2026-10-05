@@ -52,6 +52,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          nixos-hardware.nixosModules.framework-desktop-amd-ai-max-300-series
           ./machines/desktop
           nix-flatpak.nixosModules.nix-flatpak
           ./system
