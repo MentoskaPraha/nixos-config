@@ -33,6 +33,11 @@
     heroic # Game launcher for Epic Games/GOG
     #atlauncher-bin # Minecraft (waiting on upstream for atlauncher-bin packages as source build gets rejected by atlauncher API)
 
+    # Other Utilities
+    gnome-obfuscate # Utility to censor images
+    lorem # Generate placeholder text
+    bobby # SQLite Database viewer
+
     # Other stuff
     nixd # Language server for nix
     piper # Gaming mouse config UI
@@ -40,6 +45,9 @@
     obsidian # Markdown Based Notes
     git-credential-manager # Allow for logining to Git Remotes with oAuth
     vlc # Video Player
+    fragments # Torrent client
+    impression # Program for creating bootable drives
+    gaphor # Program for creating UML diagrams
   ];
 
   # Other essential programs
