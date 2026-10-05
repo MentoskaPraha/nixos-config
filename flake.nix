@@ -48,6 +48,23 @@
           }
         ];
       };
+      MP-Desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./machines/desktop
+          nix-flatpak.nixosModules.nix-flatpak
+          ./system
+          home-manager.nixosModules.default {
+            home-manager = {
+              useGlobalPkgs = true;
+              extraSpecialArgs = { inherit inputs; };
+              sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              users.filip = ./user;
+            };
+          }
+        ];
+      };
       MP-PC = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
