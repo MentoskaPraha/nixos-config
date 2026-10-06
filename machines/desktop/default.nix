@@ -8,12 +8,12 @@
   time.timeZone = "Europe/London";
 
   # Bootloader config
-  #boot.loader.limine.secureBoot.enable = true;
+  boot.loader.limine.secureBoot.enable = true;
   environment.systemPackages = with pkgs; [
     sbctl
   ];
-  #boot.initrd.luks.devices."luks-ebcbe638-86cd-4b00-a52d-7db57af258dd".device = "/dev/disk/by-uuid/ebcbe638-86cd-4b00-a52d-7db57af258dd";
-  #boot.resumeDevice = "/dev/mapper/luks-ebcbe638-86cd-4b00-a52d-7db57af258dd";
+  boot.initrd.luks.devices."luks-3bb8ecd6-e3d4-46d2-b2e8-cf132005ad10".device = "/dev/disk/by-uuid/3bb8ecd6-e3d4-46d2-b2e8-cf132005ad10";
+  boot.resumeDevice = "/dev/mapper/luks-3bb8ecd6-e3d4-46d2-b2e8-cf132005ad10";
 
   # Ensure SDDM has the same display configuration as Plasma
   system.activationScripts.sddmKwinOutputConfig = ''
