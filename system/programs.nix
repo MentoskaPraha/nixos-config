@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Essential Terminal Utilities
+    file
     nano
     curl
     wget
@@ -48,6 +49,7 @@
     fragments # Torrent client
     impression # Program for creating bootable drives
     gaphor # Program for creating UML diagrams
+    (pkgs.callPackage ./modules/pocket_bard.nix { }) # Program to have sound and ambience for TTRPGs
   ];
 
   # Other essential programs
