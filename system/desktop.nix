@@ -3,17 +3,14 @@ let
   lockscreen_wallpaper = pkgs.runCommand "lockscreen_wallpaper" {} ''
     cp ${../assets/lockscreen_wallpaper.png} $out
   '';
-  sddm_kdeglobals = pkgs.writeText "sddm_kdeglobals" ''
+  breezePatched = pkgs.runCommand "sddm-breeze-patched" {} ''
+    mkdir -p $out/share/sddm/themes
+    cp -r ${pkgs.kdePackages.plasma-desktop}/share/sddm/themes/breeze $out/share/sddm/themes/breeze-patched
+    chmod -R u+w $out/share/sddm/themes/breeze-patched
+    cat > $out/share/sddm/themes/breeze-patched/theme.conf.user <<EOF
     [General]
-    ColorScheme=BreezeDark
-    Name=Breeze Dark
-
-    [KDE]
-    widgetStyle=Breeze
-  '';
-  sddm_plasmarc = pkgs.writeText "sddm_plasmarc" ''
-    [Theme]
-    name=breeze-dark
+    background = ${lockscreen_wallpaper}
+    EOF
   '';
 in {
   # Audio
@@ -32,20 +29,10 @@ in {
     enable = true;
     wayland.enable = true;
     autoNumlock = true;
-    theme = "breeze";
+    theme = "breeze-patched";
+    extraPackages = [ pkgs.kdePackages.qtvirtualkeyboard ];
   };
-  environment.systemPackages = [
-    (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
-      [General]
-      background = ${lockscreen_wallpaper}
-    '')
-  ];
-  system.activationScripts.sddmDarkTheme = ''
-    mkdir -p /var/lib/sddm/.config
-    cp ${sddm_kdeglobals} /var/lib/sddm/.config/kdeglobals
-    cp ${sddm_plasmarc} /var/lib/sddm/.config/plasmarc
-    chown -R sddm:sddm /var/lib/sddm/.config
-  '';
+  environment.systemPackages = [ breezePatched ];
 
   # Plasma DE
   services.desktopManager.plasma6 = {
@@ -60,6 +47,8 @@ in {
     ];
     xdgOpenUsePortal = true;
   };
+  programs.xwayland.enable = true;
+  systemd.user.services.kde-baloo.environment.QT_QPA_PLATFORM = "offscreen";
 
   # Exclude unneeded packages
   environment.plasma6.excludePackages = with pkgs; [

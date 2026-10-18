@@ -4,7 +4,7 @@
     ./shell.nix
     ./librewolf.nix
     ./vscodium.nix
-    ./desktop.nix
+    #./desktop.nix # Commented out due to being annoying and always resettings thing even when not needed. Uncomment on install.
   ];
 
   home.username = "filip";

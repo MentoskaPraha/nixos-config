@@ -42,6 +42,8 @@ When installing on a new machine, use the graphical installer to setup the basic
 
 Disk should be partitioned to include a 1GB boot partition, an ext4 root partition and a swap partition for system hibernation at the end. All should be encrypted (except the boot partition, duh).
 
+Also ensure the `desktop.nix` import is uncommented for the install process in the `./user/default.nix` file. Make sure it gets commented out again afterwards.
+
 Ensure the following is setup:
 - User Passwords (lock root, set user password)
 - Disk Encryption Password
