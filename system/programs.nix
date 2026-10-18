@@ -32,7 +32,7 @@
     # Gaming Stuff
     cartridges # Game launcher
     heroic # Game launcher for Epic Games/GOG
-    #atlauncher-bin # Minecraft (waiting on upstream for atlauncher-bin packages as source build gets rejected by atlauncher API)
+    (pkgs.callPackage ./modules/atlauncher.nix { }) # Minecraft
 
     # Other Utilities
     gnome-obfuscate # Utility to censor images
