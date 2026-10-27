@@ -6,8 +6,8 @@
     ./desktop.nix
   ];
 
-  # We use the latest and greatest in this house
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # We use LTS because the latest and greatest seems broken
+  boot.kernelPackages = pkgs.linuxPackages;
 
   # Gaming Graphics config
   hardware.graphics = {
