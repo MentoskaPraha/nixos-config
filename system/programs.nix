@@ -40,6 +40,7 @@
     bobby # SQLite Database viewer
     parabolic # Internet video downloader
     picard # Music tagger and organiser
+    tagger # Audio file metadata editor
     makemkv # DvD ripper
     handbrake # Fancy ffmpeg wrapper lol
 
