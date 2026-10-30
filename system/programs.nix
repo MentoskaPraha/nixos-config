@@ -38,6 +38,7 @@
     gnome-obfuscate # Utility to censor images
     lorem # Generate placeholder text
     bobby # SQLite Database viewer
+    parabolic # Internet video downloader
 
     # Other stuff
     nixd # Language server for nix
