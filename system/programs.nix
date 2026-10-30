@@ -39,6 +39,9 @@
     lorem # Generate placeholder text
     bobby # SQLite Database viewer
     parabolic # Internet video downloader
+    picard # Music tagger and organiser
+    makemkv # DvD ripper
+    handbrake # Fancy ffmpeg wrapper lol
 
     # Other stuff
     nixd # Language server for nix
