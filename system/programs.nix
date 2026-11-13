@@ -1,4 +1,10 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+
+let 
+  jdk = pkgs.jdk.override{
+    enableJavaFX = true;
+  };
+in {
   environment.systemPackages = with pkgs; [
     # Essential Terminal Utilities
     file
@@ -34,6 +40,9 @@
     heroic # Game launcher for Epic Games/GOG
     (pkgs.callPackage ./modules/atlauncher.nix { }) # Minecraft
 
+    # Development
+    intellij-idea
+
     # Other Utilities
     gnome-obfuscate # Utility to censor images
     lorem # Generate placeholder text
@@ -64,6 +73,11 @@
       extest.enable = true;
       localNetworkGameTransfers.openFirewall = true;
       protontricks.enable = true;
+    };
+
+    java = {
+      enable = true;
+      package = jdk;
     };
 
     gamemode = {
