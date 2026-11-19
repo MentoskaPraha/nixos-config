@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
   lockscreen_wallpaper = pkgs.runCommand "lockscreen_wallpaper" {} ''
     cp ${../assets/lockscreen_wallpaper.png} $out
@@ -47,7 +47,7 @@ in {
     xdgOpenUsePortal = true;
   };
   programs.xwayland.enable = true;
-  systemd.user.services.kde-baloo.environment.QT_QPA_PLATFORM = "offscreen";
+  #systemd.user.services.kde-baloo.environment.QT_QPA_PLATFORM = "offscreen";
 
   # Exclude unneeded packages
   environment.plasma6.excludePackages = with pkgs; [
@@ -55,19 +55,29 @@ in {
     kdePackages.discover
     kdePackages.khelpcenter
     kdePackages.elisa
+    kdePackages.kmail
+    kdePackages.kmail-account-wizard
+    kdePackages.kmailtransport
+    kdePackages.merkuro
     xterm
   ];
 
-  # X11 Stuff
-  services = {
-    libinput.enable = true;
-    xserver = {
-      enable = true;
-      desktopManager.xterm.enable = lib.mkForce false;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
+  # Fonts
+  fonts = {
+    enableDefaultPackages = true;
+    enableGhostscriptFonts = true;
   };
+
+  # X11 Stuff
+  #services = {
+  #  libinput.enable = true;
+  #  xserver = {
+  #    enable = true;
+  #    desktopManager.xterm.enable = lib.mkForce false;
+  #    xkb = {
+  #      layout = "us";
+  #      variant = "";
+  #    };
+  #  };
+  #};
 }
