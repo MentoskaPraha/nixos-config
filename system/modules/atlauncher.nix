@@ -12,7 +12,7 @@
   libx11,
 }:
 let
-  version = "3.4.41.3";
+  version = "3.4.42.0";
   runtimeLibraries = [
     libglvnd
     libpulseaudio
@@ -23,7 +23,7 @@ let
   ];
   assets = fetchurl {
     url = "https://github.com/ATLauncher/ATLauncher/archive/refs/tags/v${version}.tar.gz";
-    hash = "sha256-xRAnAVQ1mSlHRkkeeZIjSePkgUA3NIHqY7AJ5x97Tlw=";
+    hash = "sha256-1nhqalTK5yKyPhe9a4sC3aboX2xOVMpUWmhggp4KiF0=";
   };
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
@@ -32,7 +32,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "https://github.com/ATLauncher/ATLauncher/releases/download/v${finalAttrs.version}/ATLauncher-${finalAttrs.version}.jar";
-    hash = "sha256-7hDkV+BMLf+V54o0Rd4xtiMlnCSid/UKz798oGNuuuw=";
+    hash = "sha256-2IUWQ2EgcRzu9s+4NeKtmgAEyu5Ikqmdm31M4pUUEh4=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
